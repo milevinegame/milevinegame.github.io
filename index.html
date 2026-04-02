@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Milevine Games • Big Neon City</title>
+
   <style>
     :root{
       --bg:#070913;
@@ -22,40 +23,22 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--txt);
       background: radial-gradient(1200px 800px at 20% 15%, rgba(49,214,255,.18), transparent 55%),
                   radial-gradient(900px 700px at 80% 25%, rgba(168,85,247,.14), transparent 55%),
-                  radial-gradient(1100px 900px at 50% 95%, rgba(0,255,157,.10), transparent 60%),
                   linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
       min-height:100vh;
-    }
-
-    .bg {
-      position:fixed; inset:0;
-      pointer-events:none;
-      opacity:.55;
-      background:
-        radial-gradient(circle at 20px 20px, rgba(255,255,255,.08) 1px, transparent 2px) 0 0/120px 120px,
-        radial-gradient(circle at 80px 60px, rgba(255,255,255,.06) 1px, transparent 2px) 0 0/160px 160px,
-        linear-gradient(90deg, rgba(49,214,255,.04), transparent 30%, rgba(168,85,247,.04) 70%, transparent);
-      filter: blur(.2px);
-      animation: drift 18s linear infinite;
-    }
-    @keyframes drift{
-      0%{transform:translate3d(0,0,0)}
-      100%{transform:translate3d(-140px,-80px,0)}
     }
 
     header{
       position:sticky;
       top:0;
-      z-index:50;
       backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(7,9,19,.78), rgba(7,9,19,.35));
+      background: rgba(7,9,19,.75);
       border-bottom:1px solid rgba(255,255,255,.10);
     }
 
@@ -63,58 +46,47 @@
       max-width:1100px;
       margin:0 auto;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       padding:14px 18px;
-      gap:14px;
     }
 
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 220px;
-    }
     .brand img{
-      width: 180px;
-      height:auto;
-      filter: drop-shadow(0 10px 18px rgba(49,214,255,.22));
+      width:160px;
     }
 
     .links{
-      display:flex; gap:10px; flex-wrap:wrap;
-      justify-content:flex-end;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
+
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
       padding:10px 12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color:var(--txt);
       border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
       text-decoration:none;
-      font-weight:600;
+      color:var(--txt);
       font-size:13px;
     }
 
-    .wrap{max-width:1100px;margin:0 auto;padding:26px 18px 70px;}
-    .hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      margin-top:10px;
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:26px 18px 70px;
     }
 
     .card{
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      overflow:hidden;
+      padding:22px;
+      margin-top:16px;
     }
-    .card .in{padding:22px;}
 
-    h1{margin:0 0 10px 0;font-size:44px}
+    h1,h2,h3{margin-top:0}
+
     .grad{
       background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
       -webkit-background-clip:text;
@@ -122,28 +94,26 @@
       color:transparent;
     }
 
-    p{color:var(--muted);line-height:1.6}
-
-    .section{margin-top:22px}
-    .divider{height:1px;background:rgba(255,255,255,.12);margin:24px 0}
-
-    .bnc .banner{
-      padding:26px 22px;
-      border-radius:26px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.14);
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.2);
+      text-decoration:none;
+      color:var(--txt);
     }
 
     footer{
-      padding:28px 18px;
-      border-top:1px solid rgba(255,255,255,.10);
       text-align:center;
-      color:rgba(233,238,255,.75);
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,.1);
+      color:rgba(255,255,255,.6);
     }
   </style>
 </head>
+
 <body>
-<div class="bg"></div>
 
 <header>
   <div class="nav">
@@ -160,61 +130,97 @@
   </div>
 </header>
 
-<main class="wrap">
+<div class="wrap">
 
-  <section class="hero">
-    <div class="card">
-      <div class="in">
-        <h1><span class="grad">Milevine Games</span></h1>
-        <p>Digitális univerzumok, neon városok és interaktív élmények.</p>
-
-        <div id="about" class="section">
-          <h2>Rólunk</h2>
-          <p>Fejlesztői stúdió futurisztikus projektekre fókuszálva.</p>
-        </div>
-      </div>
-    </div>
+  <section id="about">
+    <h1><span class="grad">Milevine Games</span></h1>
+    <p>Neon világok és játék rendszerek fejlesztése.</p>
   </section>
 
-  <section id="projects" class="section">
+  <section id="projects" class="card">
     <h2>Projektek</h2>
-    <p>Játékok, rendszerek, UI megoldások.</p>
+    <p>Launcher, multiplayer rendszerek, UI, Unreal Engine projektek.</p>
   </section>
 
-  <div class="divider"></div>
-
-  <section id="bnc" class="bnc">
-    <div class="banner">
-      <h2><span class="grad">Big Neon City</span></h2>
-      <p>Neon város projekt különböző rendszerekkel és interakciókkal.</p>
-    </div>
+  <section id="bnc" class="card">
+    <h2>Big Neon City</h2>
+    <p>Neon város, járművek, interaktív rendszerek, multiplayer élmény.</p>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- PRIVACY -->
-  <section id="privacy" class="section">
+  <!-- PRIVACY POLICY -->
+  <section id="privacy" class="card">
     <h2>Privacy Policy</h2>
+
+    <p><b>Last updated:</b> 2026</p>
+
     <p>
-      Ez az oldal nem gyűjt személyes adatokat, és nem használ adatbázist.
-      A működés statikus jellegű.
+      Milevine Games respects your privacy. This Privacy Policy explains how data is handled
+      when using Big Neon City and related services.
     </p>
+
+    <h3>Data We Collect</h3>
+    <ul>
+      <li>Epic Account display name</li>
+      <li>Language preferences</li>
+      <li>Online status</li>
+      <li>Linked account identifiers</li>
+      <li>Country/region</li>
+      <li>Friends list (if permitted)</li>
+    </ul>
+
+    <h3>How We Use Data</h3>
+    <ul>
+      <li>Authentication and login</li>
+      <li>Multiplayer functionality</li>
+      <li>Gameplay features</li>
+      <li>Saving user-related data</li>
+    </ul>
+
+    <h3>Data Sharing</h3>
     <p>
-      Külső szolgáltatások technikai naplózást végezhetnek a weboldal működéséhez.
+      We do not sell personal data. Data may be processed via Epic Online Services
+      for required functionality.
     </p>
+
+    <h3>Data Storage</h3>
     <p>
-      Amennyiben a jövőben adatkezelés történik, azt külön jelezni fogjuk.
+      Data is stored securely and only retained as long as necessary.
+    </p>
+
+    <h3>Third-Party Services</h3>
+    <p>
+      Epic Online Services (Epic Games) is used. Their policies also apply.
+    </p>
+
+    <h3>User Rights</h3>
+    <p>
+      Users may request data deletion or support via contact.
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+      Email: support@milevinegames.run.place
     </p>
   </section>
 
-</main>
+</div>
 
 <footer>
-  © <span id="y"></span> Milevine Games
+  <p>© 2026 Milevine Games</p>
 </footer>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+  // smooth scroll fallback helper
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if(el){
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
 </script>
 
 </body>
