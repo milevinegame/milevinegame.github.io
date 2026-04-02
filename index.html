@@ -34,7 +34,6 @@
       min-height:100vh;
     }
 
-    /* animated star-ish grid */
     .bg {
       position:fixed; inset:0;
       pointer-events:none;
@@ -96,13 +95,6 @@
       text-decoration:none;
       font-weight:600;
       font-size:13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
-    }
-    .chip:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.22);
     }
 
     .wrap{max-width:1100px;margin:0 auto;padding:26px 18px 70px;}
@@ -110,12 +102,7 @@
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap:18px;
-      align-items:stretch;
       margin-top:10px;
-    }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .brand img{width: 150px}
     }
 
     .card{
@@ -125,295 +112,110 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .card .in{
-      padding:22px;
-    }
+    .card .in{padding:22px;}
 
-    h1{
-      margin:0 0 10px 0;
-      font-size: 44px;
-      letter-spacing: .4px;
-      line-height:1.04;
-    }
+    h1{margin:0 0 10px 0;font-size:44px}
     .grad{
       background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
-    p{
-      margin:0 0 14px 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height:1.6;
-    }
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      color:var(--txt);
-      padding:12px 14px;
-      border-radius: 14px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.2px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.10);
-      border-color: rgba(255,255,255,.26);
-    }
-    .btn.primary{
-      background: linear-gradient(90deg, rgba(49,214,255,.22), rgba(168,85,247,.18));
-      border-color: rgba(49,214,255,.25);
-    }
 
-    .mini{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height: 240px;
-    }
-    .statgrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:10px;
-    }
-    .stat{
-      padding:12px 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      border-radius: 16px;
-    }
-    .stat b{display:block;font-size:13px;color:#cfd6ff;margin-bottom:4px}
-    .stat span{display:block;color:var(--muted);font-size:12px}
+    p{color:var(--muted);line-height:1.6}
 
-    .section{
-      margin-top:22px;
-    }
-    .section h2{
-      margin:0 0 10px 0;
-      font-size: 28px;
-      letter-spacing:.3px;
-    }
+    .section{margin-top:22px}
+    .divider{height:1px;background:rgba(255,255,255,.12);margin:24px 0}
 
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
-
-    .tile{
-      padding:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      border-radius: 18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .tile:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(400px 200px at 10% 10%, rgba(49,214,255,.18), transparent 60%),
-                  radial-gradient(380px 220px at 90% 20%, rgba(168,85,247,.15), transparent 60%);
-      opacity:.8;
-      pointer-events:none;
-    }
-    .tile > *{position:relative}
-    .kicker{
-      display:inline-block;
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:.22em;
-      color:#cfe8ff;
-      opacity:.85;
-      margin-bottom:10px;
-    }
-
-    .divider{
-      height:1px;
-      background: rgba(255,255,255,.12);
-      margin:24px 0;
-    }
-
-    /* Big Neon City section */
-    .bnc{
-      position:relative;
-    }
     .bnc .banner{
       padding:26px 22px;
+      border-radius:26px;
+      background: rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(900px 300px at 20% 0%, rgba(49,214,255,.18), transparent 55%),
-        radial-gradient(900px 300px at 80% 0%, rgba(168,85,247,.18), transparent 55%),
-        rgba(255,255,255,.04);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
     }
-    .bnc h3{
-      margin:0 0 8px 0;
-      font-size: 34px;
-      line-height:1.1;
-    }
-    .bnc ul{
-      margin:12px 0 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:10px 14px;
-    }
-    @media (max-width: 700px){ .bnc ul{grid-template-columns:1fr} }
-    .bnc li{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.14);
-      border-radius: 16px;
-      padding:12px 14px;
-      color: var(--muted);
-    }
-    .bnc li b{color:#e9eeff}
 
     footer{
-      padding:28px 18px 36px;
+      padding:28px 18px;
       border-top:1px solid rgba(255,255,255,.10);
-      color: rgba(233,238,255,.75);
       text-align:center;
-    }
-    .tiny{font-size:12px;color: rgba(233,238,255,.55)}
-    .warn{
-      margin-top:10px;
-      font-size:12px;
-      color: rgba(233,238,255,.55);
+      color:rgba(233,238,255,.75);
     }
   </style>
 </head>
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<div class="bg"></div>
 
-  <header>
-    <div class="nav">
-      <div class="brand" title="Milevine Games">
-        <!-- Tedd a logót ugyanabba a mappába és nevezd: milevine-logo.png -->
-        <img src="Milevine Games Logo.png" alt="Milevine Games logo">
-      </div>
-
-  <nav class="links">
-  <a class="chip" href="#about">Rólunk</a>
-  <a class="chip" href="#projects">Projektek</a>
-  <a class="chip" href="#bnc">Big Neon City</a>
-  <a class="chip" href="#privacy">Privacy</a>
-</nav>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="Milevine Games Logo.png" alt="logo">
     </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="card">
-        <div class="in">
-          <h1><span class="grad">Milevine Games</span></h1>
-          <p>
-            Digitális univerzumokat építünk — neon városok, okos rendszerek, játékos élmények.
-            Görgess le a <b>Big Neon City</b> részhez.
-          </p>
-          <div class="btns">
-            <a class="btn primary" href="#bnc">Ugrás a Big Neon City-re</a>
-            <a class="btn" href="#projects">Mit készítünk?</a>
-          </div>
+    <nav class="links">
+      <a class="chip" href="#about">Rólunk</a>
+      <a class="chip" href="#projects">Projektek</a>
+      <a class="chip" href="#bnc">Big Neon City</a>
+      <a class="chip" href="#privacy">Privacy</a>
+    </nav>
+  </div>
+</header>
 
-          <div class="divider"></div>
+<main class="wrap">
 
-          <div id="about" class="section">
-            <h2>Rólunk</h2>
-            <p>
-              A Milevine Games egy kreatív fejlesztői csapat/stúdió, ahol a futurisztikus dizájn
-              találkozik a programozással és a játékfejlesztéssel.
-            </p>
-          </div>
+  <section class="hero">
+    <div class="card">
+      <div class="in">
+        <h1><span class="grad">Milevine Games</span></h1>
+        <p>Digitális univerzumok, neon városok és interaktív élmények.</p>
+
+        <div id="about" class="section">
+          <h2>Rólunk</h2>
+          <p>Fejlesztői stúdió futurisztikus projektekre fókuszálva.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card mini">
-        <div class="in">
-          <span class="kicker">STÚDIÓ STATUS</span>
-          <div class="statgrid">
-            <div class="stat">
-              <b>Engine</b>
-              <span>Unreal • WSL • Web</span>
-            </div>
-            <div class="stat">
-              <b>Stílus</b>
-              <span>Neon • Cyber • City</span>
-            </div>
-            <div class="stat">
-              <b>Fókusz</b>
-              <span>Világépítés</span>
-            </div>
-            <div class="stat">
-              <b>Projekt</b>
-              <span>Big Neon City</span>
-            </div>
-          </div>
-          <p class="warn">Tipp: a menüben a gombokkal is le tudsz ugrani szekciókhoz.</p>
-        </div>
-      </div>
-    </section>
+  <section id="projects" class="section">
+    <h2>Projektek</h2>
+    <p>Játékok, rendszerek, UI megoldások.</p>
+  </section>
 
-    <section id="projects" class="section">
-      <h2>Projektek</h2>
-      <div class="grid3">
-        <div class="tile">
-          <span class="kicker">JÁTÉKFEJLESZTÉS</span>
-          <p><b>Open-world</b> város, járművek, interakciók, UI rendszerek.</p>
-        </div>
-        <div class="tile">
-          <span class="kicker">RENDSZEREK</span>
-          <p>Launcher, admin panelek, játékos menük, bejelentkezés, animációk.</p>
-        </div>
-        <div class="tile">
-          <span class="kicker">EFFECT VIBE</span>
-          <p>Neon dizájn, gyors prototípusok, “wow” effektek.</p>
-        </div>
-      </div>
-    </section>
+  <div class="divider"></div>
 
-    <div class="divider"></div>
+  <section id="bnc" class="bnc">
+    <div class="banner">
+      <h2><span class="grad">Big Neon City</span></h2>
+      <p>Neon város projekt különböző rendszerekkel és interakciókkal.</p>
+    </div>
+  </section>
 
-    <section id="bnc" class="bnc">
-      <div class="banner">
-        <h3><span class="grad">Big Neon City</span></h3>
-        <p>
-          A Milevine Games zászlóshajó projektje: egy hatalmas neon város univerzum,
-          ahol a részletek számítanak — fények, hangulat, interakciók.
-        </p>
+  <div class="divider"></div>
 
-        <ul>
-          <li>🌆 <b>Neon Districtek</b> — városrészek, stílus váltások</li>
-          <li>🚗 <b>Jármű rendszer</b> — vezetés, garázs, tuning</li>
-          <li>🏪 <b>Shopok</b> — boltok, ATM, menük</li>
-          <li>🎰 <b>Casino vibe</b> — minijátékok, belső terek</li>
-          <li>🧩 <b>Interaktív UI</b> — login, admin, panelok</li>
-          <li>🌙 <b>Nappal/éj</b> — fények, hangulat, effektek</li>
-        </ul>
+  <!-- PRIVACY -->
+  <section id="privacy" class="section">
+    <h2>Privacy Policy</h2>
+    <p>
+      Ez az oldal nem gyűjt személyes adatokat, és nem használ adatbázist.
+      A működés statikus jellegű.
+    </p>
+    <p>
+      Külső szolgáltatások technikai naplózást végezhetnek a weboldal működéséhez.
+    </p>
+    <p>
+      Amennyiben a jövőben adatkezelés történik, azt külön jelezni fogjuk.
+    </p>
+  </section>
 
-        <div class="btns" style="margin-top:16px;">
-          <a class="btn primary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Vissza a tetejére</a>
-          <a class="btn" href="#projects">Projektekhez</a>
-        </div>
-      </div>
-    </section>
-  </main>
+</main>
 
-  <footer>
-    <div><b>© <span id="y"></span> Milevine Games</b></div>
-    <div class="tiny">Big Neon City • Neon Universe • Made with ⚡</div>
-  </footer>
+<footer>
+  © <span id="y"></span> Milevine Games
+</footer>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
