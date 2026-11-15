@@ -58,4 +58,442 @@
 
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--txt);
+      background: 
+        radial-gradient(1200px 800px at 15% 10%, rgba(49, 214, 255, 0.16), transparent 55%),
+        radial-gradient(900px 700px at 85% 25%, rgba(168, 85, 247, 0.15), transparent 55%),
+        radial-gradient(800px 600px at 50% 90%, rgba(0, 255, 157, 0.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(7, 9, 19, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--txt);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    .links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      text-decoration: none;
+      color: var(--txt);
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--c1);
+      background: rgba(49, 214, 255, 0.12);
+      box-shadow: 0 0 16px rgba(49, 214, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    /* Hero szekció */
+    .hero {
+      padding: 48px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(49, 214, 255, 0.08), rgba(168, 85, 247, 0.08));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--c3);
+      background: rgba(0, 255, 157, 0.1);
+      border: 1px solid rgba(0, 255, 157, 0.3);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin: 0 0 12px 0;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 24px 0;
+    }
+
+    .grad {
+      background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      color: var(--txt);
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, rgba(49, 214, 255, 0.25), rgba(168, 85, 247, 0.25));
+      border-color: var(--c1);
+      box-shadow: 0 0 20px rgba(49, 214, 255, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, rgba(49, 214, 255, 0.4), rgba(168, 85, 247, 0.4));
+      box-shadow: 0 0 28px rgba(49, 214, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-top: 24px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: var(--c1);
+      font-size: 1.1rem;
+    }
+
+    /* Rács elrendezés a projekteknek és funkcióknak */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .sub-card {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 18px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .sub-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--c2);
+    }
+
+    .sub-card h4 {
+      margin: 0 0 8px 0;
+      color: var(--txt);
+      font-size: 1.05rem;
+    }
+
+    .sub-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #d8b4fe;
+    }
+
+    .tag.cyan {
+      background: rgba(49, 214, 255, 0.15);
+      border-color: rgba(49, 214, 255, 0.3);
+      color: #7dd3fc;
+    }
+
+    .tag.green {
+      background: rgba(0, 255, 157, 0.12);
+      border-color: rgba(0, 255, 157, 0.3);
+      color: #6ee7b7;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .contact-box {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgba(49, 214, 255, 0.08);
+      border: 1px solid rgba(49, 214, 255, 0.25);
+      color: var(--c1);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box:hover {
+      background: rgba(49, 214, 255, 0.16);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      background: rgba(7, 9, 19, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#about">
+      <img src="Milevine Games Logo.png" alt="Milevine Games Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+      <span style="display:none;" class="grad">Milevine Games</span>
+    </a>
+    <nav class="links">
+      <a class="chip" href="#about">Rólunk</a>
+      <a class="chip" href="#bnc">Big Neon City</a>
+      <a class="chip" href="#projects">Projektek</a>
+      <a class="chip" href="#privacy">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- HERO / RÓLUNK -->
+  <section id="about" class="hero">
+    <span class="hero-badge">Független Fejlesztőstúdió</span>
+    <h1><span class="grad">Milevine Games</span></h1>
+    <p>
+      Neon világok, nyílt világú környezetek, egyedi launcherek és modern multiplayer rendszerek fejlesztése Unreal Engine alapokon.
+    </p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="#bnc">Fedezd fel a Big Neon City-t</a>
+      <a class="btn btn-secondary" href="#projects">Összes projekt</a>
+    </div>
+  </section>
+
+  <!-- BIG NEON CITY KIEMELT SZEKCIÓ -->
+  <section id="bnc" class="card">
+    <h2><span class="grad">Big Neon City</span></h2>
+    <p style="color: var(--muted);">
+      Merülj el egy hatalmas, fényekkel teli metropoliszban, ahol az interaktív rendszerek, a járműdinamika és a közösségi multiplayer élmény találkozik.
+    </p>
+    
+    <div class="grid">
+      <div class="sub-card">
+        <h4>Nyílt Neon Város</h4>
+        <p>Részletgazdag városi környezet dinamikus fényekkel, látványos éjszakai atmoszférával és felfedezhető zónákkal.</p>
+      </div>
+      <div class="sub-card">
+        <h4>Járművek & Fizika</h4>
+        <p>Testreszabható irányítás, valósághű vezetési élmény és városi közlekedési rendszerek.</p>
+      </div>
+      <div class="sub-card">
+        <h4>Epic Online Services</h4>
+        <p>Zökkenőmentes fiókkapcsolat, barátlista-támogatás és stabil többjátékos háttérinfrastruktúra.</p>
+      </div>
+    </div>
+
+    <div class="tag-list">
+      <span class="tag cyan">Unreal Engine 5.8</span>
+      <span class="tag">Multiplayer</span>
+      <span class="tag green">Epic Online Services</span>
+      <span class="tag cyan">Open World</span>
+    </div>
+  </section>
+
+  <!-- PROJEKTEK & TECHNOLÓGIÁK -->
+  <section id="projects" class="card">
+    <h2>Projektek & Rendszerek</h2>
+    <p style="color: var(--muted);">
+      A Milevine Games csapata nemcsak játékokat épít, hanem a hozzájuk tartozó teljes ökoszisztémát és háttérrendszereket is fejleszti.
+    </p>
+
+    <div class="grid">
+      <div class="sub-card">
+        <h4>Milevine Launcher</h4>
+        <p>Saját fejlesztésű indítófelület automatikus frissítésekkel, fiókkezeléssel és gyors játékbeli belépéssel.</p>
+      </div>
+      <div class="sub-card">
+        <h4>Backend & Szerverek</h4>
+        <p>Python és modern webes technológiákra épülő szerveroldali logika, adatmentés és hitelesítés.</p>
+      </div>
+      <div class="sub-card">
+        <h4>Egyedi UI / UX Rendszerek</h4>
+        <p>Letisztult, futurisztikus kezelőfelületek játékosoknak tervezve, reszponzív visszajelzésekkel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy" class="card">
+    <h2>Privacy Policy</h2>
+    <p style="color: var(--muted);"><b>Last updated:</b> 2026</p>
+    <p>
+      Milevine Games respects your privacy. This Privacy Policy explains how data is handled
+      when using Big Neon City and related services.
+    </p>
+
+    <div class="grid">
+      <div class="sub-card">
+        <h3>Data We Collect</h3>
+        <ul>
+          <li>Epic Account display name</li>
+          <li>Language preferences</li>
+          <li>Online status</li>
+          <li>Linked account identifiers</li>
+          <li>Country/region</li>
+          <li>Friends list (if permitted)</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h3>How We Use Data</h3>
+        <ul>
+          <li>Authentication and login</li>
+          <li>Multiplayer functionality</li>
+          <li>Gameplay features</li>
+          <li>Saving user-related data</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Data Sharing & Storage</h3>
+    <p style="color: var(--muted);">
+      We do not sell personal data. Data may be processed via Epic Online Services
+      for required functionality. Data is stored securely and only retained as long as necessary.
+    </p>
+
+    <h3>Third-Party Services & User Rights</h3>
+    <p style="color: var(--muted);">
+      Epic Online Services (Epic Games) is used; their policies also apply.
+      Users may request data deletion or support via contact at any time.
+    </p>
+
+    <h3>Contact</h3>
+    <a class="contact-box" href="mailto:barathmilan1211@gmail.com">barathmilan1211@gmail.com</a>
+  </section>
+</div>
+
+<footer>
+  <p>© 2026 <strong>Milevine Games</strong> • Minden jog fenntartva.</p>
+</footer>
+
+<script>
+  // Smooth scroll fallback helper
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
